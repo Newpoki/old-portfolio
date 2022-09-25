@@ -1,9 +1,10 @@
-import { styled } from "@mui/material";
+import { Box } from "@mui/material";
+import { Header } from "./header";
 
 export const App = () => {
-  return <Root>hi</Root>;
+  return (
+    <Box minHeight="100vh" mx={15}>
+      <Header />
+    </Box>
+  );
 };
-
-const Root = styled("div")`
-  min-height: 100vh;
-`;
