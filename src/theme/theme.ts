@@ -20,9 +20,7 @@ const customFonts: ThemeCustomFonts = {
 /**
  * Creating a classic theme first, so that we can access such values as breakpoints
  */
-const baseTheme = createTheme();
-
-export const theme = createTheme(baseTheme, {
+const baseTheme = createTheme({
   palette: {
     background: {
       default: customColors.background,
@@ -35,6 +33,9 @@ export const theme = createTheme(baseTheme, {
       main: customColors.primary,
     },
   },
+});
+
+export const theme = createTheme(baseTheme, {
   typography: {
     custom: customFonts,
 
@@ -49,25 +50,22 @@ export const theme = createTheme(baseTheme, {
       fontFamily: customFonts.playFair,
       fontWeight: 700,
       fontSize: 34,
+      lineHeight: "120%",
 
       [baseTheme.breakpoints.up("sm")]: {
         fontSize: 44,
-        lineHeight: "120%",
       },
 
       [baseTheme.breakpoints.up("md")]: {
         fontSize: 75,
-        lineHeight: "120%",
       },
 
       [baseTheme.breakpoints.up("lg")]: {
         fontSize: 95,
-        lineHeight: "120%",
       },
 
       [baseTheme.breakpoints.up("xl")]: {
         fontSize: 120,
-        lineHeight: "120%",
       },
     },
 
@@ -77,6 +75,26 @@ export const theme = createTheme(baseTheme, {
       fontSize: 48,
       lineHeight: "120%",
       fontWeight: 700,
+    },
+
+    h3: {
+      color: customColors.highEmphasis,
+      fontFamily: customFonts.playFair,
+      fontSize: 28,
+      lineHeight: "150%",
+      fontWeight: 700,
+
+      [baseTheme.breakpoints.up("sm")]: {
+        fontSize: 38,
+      },
+
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: 48,
+      },
+
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: 58,
+      },
     },
 
     body1: {

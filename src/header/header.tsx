@@ -21,7 +21,6 @@ export const Header = () => {
             return (
               <Tab
                 component={NavLink}
-                disabled={link.disabled}
                 key={link.href}
                 label={
                   <Typography variant="body2" color="inherit">
