@@ -1,4 +1,4 @@
-import { Box, styled, Tab, Tabs, Typography } from "@mui/material";
+import { AppBar, Box, styled, Tab, Tabs, Typography } from "@mui/material";
 import { NavLink, useLocation } from "react-router-dom";
 import { HEADER_LINKS } from "./header-constants";
 
@@ -6,16 +6,21 @@ export const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <Box
-      alignItems="center"
+    <AppBar
+      position="sticky"
       component="nav"
-      justifyContent="space-between"
-      display="flex" // Increasing zIndex to be displayed over the yellow splash
-      zIndex={2}
+      sx={{
+        display: "flex",
+        flexDirection: "revert",
+        alignItems: "center",
+        boxShadow: "none",
+        backdropFilter: "blur(3px)",
+        backgroundColor: "transparent",
+      }}
     >
       <Name variant="body2">Jason Savelli</Name>
 
-      <Box alignItems="center" display="flex">
+      <Box alignItems="center" display="flex" ml="auto">
         <Tabs value={pathname} aria-label="nav tabs example">
           {HEADER_LINKS.map((link) => {
             return (
@@ -34,7 +39,7 @@ export const Header = () => {
           })}
         </Tabs>
       </Box>
-    </Box>
+    </AppBar>
   );
 };
 
