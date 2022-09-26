@@ -17,7 +17,12 @@ const customFonts: ThemeCustomFonts = {
   roboto: "Roboto",
 } as const;
 
-export const theme = createTheme({
+/**
+ * Creating a classic theme first, so that we can access such values as breakpoints
+ */
+const baseTheme = createTheme();
+
+export const theme = createTheme(baseTheme, {
   palette: {
     background: {
       default: customColors.background,
@@ -42,9 +47,18 @@ export const theme = createTheme({
     h1: {
       color: customColors.highEmphasis,
       fontFamily: customFonts.playFair,
-      fontSize: 64,
-      lineHeight: "120%",
       fontWeight: 700,
+      fontSize: 34,
+
+      [baseTheme.breakpoints.up("sm")]: {
+        fontSize: 44,
+        lineHeight: "120%",
+      },
+
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: 64,
+        lineHeight: "120%",
+      },
     },
 
     h2: {
@@ -58,8 +72,17 @@ export const theme = createTheme({
     body1: {
       color: customColors.mediumEmphasis,
       fontFamily: customFonts.nunito,
-      fontSize: 24,
-      lineHeight: "150%",
+      fontSize: 18,
+
+      [baseTheme.breakpoints.up("sm")]: {
+        fontSize: 21,
+        lineHeight: "150%",
+      },
+
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: 24,
+        lineHeight: "150%",
+      },
     },
 
     body2: {

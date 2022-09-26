@@ -6,15 +6,16 @@ export const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <Box alignItems="center" component="nav" justifyContent="space-between" display="flex">
+    <Box
+      alignItems="center"
+      component="nav"
+      justifyContent="space-between"
+      display="flex" // Increasing zIndex to be displayed over the yellow splash
+      zIndex={2}
+    >
       <Name variant="body2">Jason Savelli</Name>
 
-      <Box
-        alignItems="center"
-        display="flex"
-        // Increasing zIndex to be displayed over the yellow splash
-        zIndex={2}
-      >
+      <Box alignItems="center" display="flex">
         <Tabs value={pathname} aria-label="nav tabs example">
           {HEADER_LINKS.map((link) => {
             return (
