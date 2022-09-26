@@ -1,4 +1,5 @@
-import { Box, IconButton, styled, Tooltip, Typography } from "@mui/material";
+import { TransitionWrapper } from "@/theme/components/transition-wrapper";
+import { Box, Fade, IconButton, Slide, styled, Tooltip, Typography } from "@mui/material";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { SOCIAL_NETWORK_BUTTONS } from "./home-constants";
@@ -34,12 +35,7 @@ export const Home = () => {
         <title>Home</title>
       </Helmet>
 
-      <Box
-        display="flex"
-        flexDirection={{
-          xs: "column-reverse",
-        }}
-      >
+      <Box display="flex" flexDirection={{ xs: "column-reverse" }}>
         <Box
           mt={{
             // Only want the content below splash on small screen
@@ -51,49 +47,67 @@ export const Home = () => {
           // So that it goes on top of the yellow splash
           zIndex={2}
         >
-          <JobTitle color="primary" mb={2}>
-            Web Developper
-          </JobTitle>
+          <TransitionWrapper>
+            <Slide in timeout={{ enter: 1600 }} direction="left">
+              <JobTitle color="primary" mb={2}>
+                Web Developper
+              </JobTitle>
+            </Slide>
+          </TransitionWrapper>
 
-          <Typography mb={4} variant="h1">
-            Hello, my name is Jason Savelli
-          </Typography>
+          <TransitionWrapper>
+            <Slide in timeout={{ enter: 1600 }} direction="right">
+              <Typography mb={4} variant="h1">
+                Hello, my name is Jason Savelli
+              </Typography>
+            </Slide>
+          </TransitionWrapper>
 
-          <Typography mb={4}>
-            I&apos;m a Front End developper, and I enjoy working on React and TS projects.
-          </Typography>
+          <TransitionWrapper>
+            <Slide in timeout={{ enter: 1600 }} direction="left">
+              <Typography mb={4}>
+                I&apos;m a Front End developper, and I enjoy working on React and TS projects.
+              </Typography>
+            </Slide>
+          </TransitionWrapper>
         </Box>
 
-        <Box
-          display="flex"
-          position="absolute"
-          right={0}
-          top={0}
-          //  We don't want the picture to cause vertical scroll
-          maxHeight="100vh"
-          width={{
-            xs: "100%",
-            md: 720,
-            lg: 1000,
-          }}
-          ref={ref}
-        >
-          <StyledYellowSplash />
-        </Box>
+        <TransitionWrapper>
+          <Fade in timeout={{ enter: 2500 }}>
+            <Box
+              display="flex"
+              position="absolute"
+              right={0}
+              top={0}
+              //  We don't want the picture to cause vertical scroll
+              maxHeight="100vh"
+              width={{
+                xs: "100%",
+                md: 720,
+                lg: 1000,
+              }}
+              ref={ref}
+            >
+              <StyledYellowSplash />
+            </Box>
+          </Fade>
+        </TransitionWrapper>
       </Box>
 
-      <Box flex="1" alignItems="center" justifyContent="center" display="flex">
-        {SOCIAL_NETWORK_BUTTONS.map((socialNetwork) => {
+      <Box flex="1" alignItems="center" justifyContent="center" display="flex" overflow="hidden">
+        {SOCIAL_NETWORK_BUTTONS.map((socialNetwork, index) => {
           return (
-            <Tooltip key={socialNetwork.href} title={socialNetwork.tooltipTitle}>
-              <IconButton
-                sx={{ mx: { xs: 0.5, md: 2 }, color: socialNetwork.color }}
-                href={socialNetwork.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <socialNetwork.Icon sx={{ fontSize: { xs: 40, md: 80 } }} />
-              </IconButton>
+            <Tooltip title={socialNetwork.tooltipTitle} key={socialNetwork.href}>
+              <Slide in timeout={{ enter: (index + 1) * 300 }} direction="up">
+                <IconButton
+                  sx={{ mx: { xs: 0.5, md: 2 }, color: socialNetwork.color }}
+                  href={socialNetwork.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <socialNetwork.Icon sx={{ fontSize: { xs: 40, md: 80 } }} />
+                </IconButton>
+              </Slide>
             </Tooltip>
           );
         })}
