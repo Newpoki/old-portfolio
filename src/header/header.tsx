@@ -21,13 +21,14 @@ export const Header = () => {
             return (
               <Tab
                 component={NavLink}
+                disabled={link.disabled}
+                key={link.href}
                 label={
                   <Typography variant="body2" color="inherit">
                     {link.label}
                   </Typography>
                 }
                 to={link.href}
-                key={link.href}
                 value={link.href}
               />
             );
