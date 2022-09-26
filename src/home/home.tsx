@@ -1,5 +1,6 @@
 import { Box, IconButton, styled, Tooltip, Typography } from "@mui/material";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { SOCIAL_NETWORK_BUTTONS } from "./home-constants";
 import { ReactComponent as YellowSplash } from "./yellow-splash.svg";
 
@@ -29,6 +30,10 @@ export const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+
       <Box
         display="flex"
         flexDirection={{
