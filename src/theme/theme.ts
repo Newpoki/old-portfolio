@@ -56,7 +56,17 @@ export const theme = createTheme(baseTheme, {
       },
 
       [baseTheme.breakpoints.up("md")]: {
-        fontSize: 64,
+        fontSize: 75,
+        lineHeight: "120%",
+      },
+
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: 95,
+        lineHeight: "120%",
+      },
+
+      [baseTheme.breakpoints.up("xl")]: {
+        fontSize: 120,
         lineHeight: "120%",
       },
     },
@@ -73,15 +83,18 @@ export const theme = createTheme(baseTheme, {
       color: customColors.mediumEmphasis,
       fontFamily: customFonts.nunito,
       fontSize: 18,
+      lineHeight: "150%",
 
       [baseTheme.breakpoints.up("sm")]: {
         fontSize: 21,
-        lineHeight: "150%",
       },
 
       [baseTheme.breakpoints.up("md")]: {
         fontSize: 24,
-        lineHeight: "150%",
+      },
+
+      [baseTheme.breakpoints.up("xl")]: {
+        fontSize: 34,
       },
     },
 

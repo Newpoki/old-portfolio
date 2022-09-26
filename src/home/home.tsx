@@ -69,11 +69,13 @@ export const Home = () => {
           position="absolute"
           right={0}
           top={0}
+          //  We don't want the picture to cause vertical scroll
+          maxHeight="100vh"
           width={{
             xs: "100%",
             md: 720,
+            lg: 1000,
           }}
-          height={{ md: 609 }}
           ref={ref}
         >
           <StyledYellowSplash />
