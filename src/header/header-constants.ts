@@ -1,4 +1,6 @@
+import { Cottage as CottageIcon, DesignServices as DesignServicesIcon } from "@mui/icons-material";
+
 export const HEADER_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
+  { label: "Home", href: "/", icon: CottageIcon },
+  { label: "Projects", href: "/projects", icon: DesignServicesIcon },
 ];

@@ -32,6 +32,10 @@ const baseTheme = createTheme({
     primary: {
       main: customColors.primary,
     },
+
+    secondary: {
+      main: customColors.highEmphasis,
+    },
   },
 });
 
@@ -147,6 +151,14 @@ export const theme = createTheme(baseTheme, {
       },
     },
 
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: baseTheme.palette.custom.background,
+        },
+      },
+    },
+
     MuiTab: {
       styleOverrides: {
         root: {
@@ -162,9 +174,9 @@ export const theme = createTheme(baseTheme, {
 
     MuiTabs: {
       styleOverrides: {
-        indicator: {
-          backgroundColor: customColors.highEmphasis,
-        },
+        // indicatorPrimary: {
+        //   backgroundColor: customColors.highEmphasis,
+        // },
       },
     },
 
