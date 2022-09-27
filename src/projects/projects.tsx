@@ -1,3 +1,4 @@
+import { TransitionWrapper } from "@/theme/components/transition-wrapper";
 import { Box, Slide, Typography } from "@mui/material";
 import { ProjectsCard } from "./projects-card";
 import { PROJECTS_LIST } from "./projects-constants";
@@ -23,27 +24,23 @@ export const Projects = () => {
 
       <Box component="ul" sx={{ listStyle: "none" }} pl={0}>
         {PROJECTS_LIST.map((project, index) => {
-          const isLastCard = index === PROJECTS_LIST.length - 1;
-
           return (
-            <Slide
-              in
-              key={project.websiteUrl}
-              direction={index % 2 === 0 ? "left" : "right"}
-              timeout={{ enter: 1200 }}
-            >
-              <Box component="li">
-                <ProjectsCard
-                  {...project}
-                  sx={{
-                    mb: {
-                      xs: isLastCard ? 0 : 4,
-                      lg: isLastCard ? 0 : 10,
-                    },
-                  }}
-                />
-              </Box>
-            </Slide>
+            <TransitionWrapper component="li" key={project.websiteUrl}>
+              <Slide in direction={index % 2 === 0 ? "left" : "right"} timeout={{ enter: 1200 }}>
+                {/* Intermediary component so that the slide animate this while we can have more transition on `<ProjectCard />` */}
+                <Box>
+                  <ProjectsCard
+                    {...project}
+                    sx={{
+                      mb: {
+                        xs: 4,
+                        lg: 10,
+                      },
+                    }}
+                  />
+                </Box>
+              </Slide>
+            </TransitionWrapper>
           );
         })}
       </Box>

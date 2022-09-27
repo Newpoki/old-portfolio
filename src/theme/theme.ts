@@ -1,4 +1,4 @@
-import { createTheme, tabClasses } from "@mui/material";
+import { createTheme, darken, tabClasses } from "@mui/material";
 import { ThemeCustomColors, ThemeCustomFonts } from "./theme-colors-types";
 
 const customColors: ThemeCustomColors = {
@@ -127,6 +127,13 @@ export const theme = createTheme(baseTheme, {
     MuiButton: {
       defaultProps: {
         disableElevation: true,
+      },
+      styleOverrides: {
+        containedPrimary: {
+          "&:hover": {
+            backgroundColor: darken(baseTheme.palette.primary.main, 0.1),
+          },
+        },
       },
     },
 
