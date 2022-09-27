@@ -32,7 +32,7 @@ export const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Home - Jason Savelli</title>
       </Helmet>
 
       <Box display="flex" flexDirection={{ xs: "column-reverse" }}>
