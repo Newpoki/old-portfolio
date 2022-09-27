@@ -1,5 +1,6 @@
+import { PageMainTitle } from "@/theme/components/page-main-title";
 import { TransitionWrapper } from "@/theme/components/transition-wrapper";
-import { Box, Slide, Typography } from "@mui/material";
+import { Box, Slide } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { ProjectsCard } from "./projects-card";
 import { PROJECTS_LIST } from "./projects-constants";
@@ -12,21 +13,7 @@ export const Projects = () => {
       </Helmet>
 
       <Box maxWidth={1200} width="100%" mx="auto">
-        <Slide in direction="right" timeout={{ enter: 1200 }}>
-          <Typography
-            mb={8}
-            mt={4}
-            variant="h1"
-            textAlign="center"
-            sx={(theme) => ({
-              textDecoration: "underline",
-              pb: 1,
-              textDecorationColor: theme.palette.primary.main,
-            })}
-          >
-            Projects
-          </Typography>
-        </Slide>
+        <PageMainTitle>Projects</PageMainTitle>
 
         <Box component="ul" sx={{ listStyle: "none" }} pl={0}>
           {PROJECTS_LIST.map((project, index) => {
