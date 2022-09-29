@@ -1,9 +1,11 @@
 import { PageMainTitle } from "@/theme/components/page-main-title";
 import { TransitionWrapper } from "@/theme/components/transition-wrapper";
-import { Box, Slide } from "@mui/material";
+import { YellowSplashWrapper } from "@/theme/components/yellow-splash-wrapper";
+import { Box, Slide, styled } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { ProjectsCard } from "./projects-card";
 import { PROJECTS_LIST } from "./projects-constants";
+import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash.svg";
 
 export const Projects = () => {
   return (
@@ -12,7 +14,11 @@ export const Projects = () => {
         <title>Projects - Jason Savelli</title>
       </Helmet>
 
-      <Box maxWidth={1200} width="100%" mx="auto">
+      <YellowSplashWrapper>
+        <StyledYellowSplash />
+      </YellowSplashWrapper>
+
+      <Box maxWidth={1200} width="100%" mx="auto" position="relative" zIndex={2}>
         <PageMainTitle>Projects</PageMainTitle>
 
         <Box component="ul" sx={{ listStyle: "none" }} pl={0}>
@@ -41,3 +47,7 @@ export const Projects = () => {
     </>
   );
 };
+
+const StyledYellowSplash = styled(YellowSplash)`
+  width: 100%;
+`;

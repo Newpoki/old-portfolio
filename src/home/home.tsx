@@ -1,9 +1,10 @@
 import { TransitionWrapper } from "@/theme/components/transition-wrapper";
-import { Box, Fade, IconButton, Slide, styled, Tooltip, Typography } from "@mui/material";
+import { YellowSplashWrapper } from "@/theme/components/yellow-splash-wrapper";
+import { Box, IconButton, Slide, styled, Tooltip, Typography } from "@mui/material";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { SOCIAL_NETWORK_BUTTONS } from "./home-constants";
-import { ReactComponent as YellowSplash } from "./yellow-splash.svg";
+import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash-with-photo.svg";
 
 export const Home = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -72,26 +73,9 @@ export const Home = () => {
           </TransitionWrapper>
         </Box>
 
-        <TransitionWrapper>
-          <Fade in timeout={{ enter: 2500 }}>
-            <Box
-              display="flex"
-              position="absolute"
-              right={0}
-              top={0}
-              //  We don't want the picture to cause vertical scroll
-              maxHeight="100vh"
-              width={{
-                xs: "100%",
-                md: 720,
-                lg: 1000,
-              }}
-              ref={ref}
-            >
-              <StyledYellowSplash />
-            </Box>
-          </Fade>
-        </TransitionWrapper>
+        <YellowSplashWrapper ref={ref}>
+          <StyledYellowSplash />
+        </YellowSplashWrapper>
       </Box>
 
       <Box flex="1" alignItems="center" justifyContent="center" display="flex" overflow="hidden">
