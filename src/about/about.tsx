@@ -1,5 +1,5 @@
 import { PageMainTitle } from "@/theme/components/page-main-title";
-import { Box, Button, Slide, styled, Typography, Zoom } from "@mui/material";
+import { Box, Button, Link, Slide, styled, Typography, Zoom } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import Me from "./me.jpg";
 import { OpenInNew as OpenInNewIcon } from "@mui/icons-material";
@@ -96,10 +96,34 @@ export const About = () => {
             </Slide>
 
             <AboutParagraph timeout={{ enter: 1400 }}>
-              The design is <b>strongly</b> inspired by this
-              <a href="https://www.figma.com/community/file/1129627038584790658">Figma</a> on the
-              community place. It&apos;s made with a<i>little bit</i> overkilled stack, using React,
-              Material-ui with Typescript.
+              <Typography component="span" variant="body2">
+                The design is <b>strongly</b> inspired by this&nbsp;
+              </Typography>
+              <Link href="https://www.figma.com/community/file/946944225031473055">Figma</Link> on
+              the community place. It&apos;s made with a<i>little bit</i> overkilled stack,
+              using&nbsp;
+              <Link href="https://fr.reactjs.org/" target="_blank">
+                React
+              </Link>
+              ,&nbsp;
+              <Link href="https://mui.com" target="_blank">
+                Material UI
+              </Link>
+              &nbsp;with&nbsp;
+              <Link href="https://www.typescriptlang.org/" target="_blank">
+                Typescript
+              </Link>
+              &nbsp;and&nbsp;
+              <Link href="https://vitejs.dev/" target="_blank">
+                Vite
+              </Link>
+              .
+            </AboutParagraph>
+
+            <AboutParagraph timeout={{ enter: 1600 }}>
+              The picture on the home page has been taken by <b>Andrey Vyrodov</b>, and you can have
+              a look at his&nbsp;
+              <Link href="https://www.instagram.com/runningwithcameraphoto/">Instagram</Link>.
             </AboutParagraph>
 
             <AboutParagraph timeout={{ enter: 1600 }}>

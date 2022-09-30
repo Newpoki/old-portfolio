@@ -1,4 +1,4 @@
-import { createTheme, darken, tabClasses } from "@mui/material";
+import { createTheme, darken, tabClasses, typographyClasses } from "@mui/material";
 import { ThemeCustomColors, ThemeCustomFonts } from "./theme-colors-types";
 
 const customColors: ThemeCustomColors = {
@@ -159,6 +159,17 @@ export const theme = createTheme(baseTheme, {
       },
     },
 
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          [`&.${typographyClasses.root}`]: {
+            color: baseTheme.palette.primary.main,
+            fontWeight: 600,
+          },
+        },
+      },
+    },
+
     MuiTab: {
       styleOverrides: {
         root: {
@@ -169,14 +180,6 @@ export const theme = createTheme(baseTheme, {
             color: customColors.highEmphasis,
           },
         },
-      },
-    },
-
-    MuiTabs: {
-      styleOverrides: {
-        // indicatorPrimary: {
-        //   backgroundColor: customColors.highEmphasis,
-        // },
       },
     },
 
