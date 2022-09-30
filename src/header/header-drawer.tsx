@@ -38,6 +38,7 @@ export const HeaderDrawer = ({ isOpen, onOpen, onClose }: Props) => {
               key={link.href}
               label={<Typography color="inherit">{link.label}</Typography>}
               to={link.href}
+              onClick={onClose}
               value={link.href}
             />
           );
