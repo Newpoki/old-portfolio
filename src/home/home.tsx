@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { SOCIAL_NETWORK_BUTTONS } from "./home-constants";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash-with-photo.svg";
 
-export const Home = () => {
+const Home = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [yellowSplashHeight, setYellowSplashHeight] = useState(0);
 
@@ -99,6 +99,8 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
 
 const JobTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.custom.confortaa,

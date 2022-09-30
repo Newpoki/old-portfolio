@@ -10,7 +10,7 @@ import { useRef } from "react";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash.svg";
 import { YellowSplashWrapper } from "@/theme/components/yellow-splash-wrapper";
 
-export const About = () => {
+const About = () => {
   const meParagraphRoot = useRef<HTMLDivElement>(null);
   const thisWebsiteParagraphRoot = useRef<HTMLDivElement>(null);
 
@@ -149,6 +149,8 @@ export const About = () => {
     </Box>
   );
 };
+
+export default About;
 
 const StyledYellowSplash = styled(YellowSplash)`
   width: 100%;

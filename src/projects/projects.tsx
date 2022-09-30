@@ -7,7 +7,7 @@ import { ProjectsCard } from "./projects-card";
 import { PROJECTS_LIST } from "./projects-constants";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash.svg";
 
-export const Projects = () => {
+const Projects = () => {
   return (
     <>
       <Helmet>
@@ -47,6 +47,8 @@ export const Projects = () => {
     </>
   );
 };
+
+export default Projects;
 
 const StyledYellowSplash = styled(YellowSplash)`
   width: 100%;

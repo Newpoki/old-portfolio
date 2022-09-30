@@ -1,9 +1,12 @@
 import { Box } from "@mui/material";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { About } from "./about/about";
 import { Header } from "./header/header";
-import { Home } from "./home/home";
-import { Projects } from "./projects/projects";
+
+const Home = lazy(() => import("./home/home"));
+const Projects = lazy(() => import("./projects/projects"));
+const Experiencies = lazy(() => import("./experiencies/experiencies"));
+const About = lazy(() => import("./about/about"));
 
 export const App = () => {
   return (
@@ -11,9 +14,41 @@ export const App = () => {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={null}>
+              <Home />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/projects"
+          element={
+            <Suspense fallback={null}>
+              <Projects />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/experiencies"
+          element={
+            <Suspense fallback={null}>
+              <Experiencies />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <Suspense fallback={null}>
+              <About />
+            </Suspense>
+          }
+        />
       </Routes>
     </Box>
   );
