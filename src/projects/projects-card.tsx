@@ -1,6 +1,6 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
-import { alpha, SystemStyleObject } from "@mui/system";
+import { alpha, lighten, SystemStyleObject } from "@mui/system";
 
 type Props = {
   title: string;
@@ -26,7 +26,7 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
 
         "&:hover": {
           boxShadow: theme.shadows[6],
-          bgcolor: alpha(theme.palette.primary.main, 0.1),
+          bgcolor: lighten(theme.palette.primary.main, 0.9),
         },
       })}
     >
