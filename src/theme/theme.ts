@@ -101,6 +101,26 @@ export const theme = createTheme(baseTheme, {
       },
     },
 
+    h4: {
+      color: customColors.highEmphasis,
+      fontFamily: customFonts.playFair,
+      fontSize: 20,
+      lineHeight: "150%",
+      fontWeight: 700,
+
+      [baseTheme.breakpoints.up("sm")]: {
+        fontSize: 25,
+      },
+
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: 35,
+      },
+
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: 35,
+      },
+    },
+
     body1: {
       color: customColors.mediumEmphasis,
       fontFamily: customFonts.nunito,
