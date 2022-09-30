@@ -1,5 +1,6 @@
+import { NavLink } from "@/theme/components/navlink";
 import { SwipeableDrawer, Tab, Tabs, tabsClasses, Typography } from "@mui/material";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { HEADER_LINKS } from "./header-constants";
 
 type Props = {

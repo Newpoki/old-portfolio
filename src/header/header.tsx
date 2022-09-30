@@ -1,9 +1,10 @@
 import { AppBar, Box, IconButton, styled, Tab, Tabs, Typography } from "@mui/material";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { HEADER_LINKS } from "./header-constants";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import { HeaderDrawer } from "./header-drawer";
+import { NavLink } from "@/theme/components/navlink";
 
 export const Header = () => {
   const { pathname } = useLocation();

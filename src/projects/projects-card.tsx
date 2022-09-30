@@ -1,6 +1,6 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
-import { alpha, lighten, SystemStyleObject } from "@mui/system";
+import { lighten, SystemStyleObject } from "@mui/system";
 
 type Props = {
   title: string;
