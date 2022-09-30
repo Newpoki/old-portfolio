@@ -5,6 +5,8 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import { HeaderDrawer } from "./header-drawer";
 import { NavLink } from "@/theme/components/navlink";
+import { APP_PX } from "@/app/app-constants";
+import { HeaderThemeModeButton } from "./header-theme-mode-button";
 
 export const Header = () => {
   const { pathname } = useLocation();
@@ -26,12 +28,14 @@ export const Header = () => {
         component="nav"
         sx={(theme) => ({
           display: "flex",
-          flexDirection: "revert",
+          flexDirection: "row",
+          justifyContent: "space-between",
           alignItems: "center",
           boxShadow: "none",
           backdropFilter: "blur(3px)",
           backgroundColor: "transparent",
           minHeight: theme.mixins.toolbar,
+          px: APP_PX,
         })}
       >
         <IconButton color="primary" sx={{ display: { md: "none" } }} onClick={handleOpenDrawer}>
@@ -42,17 +46,17 @@ export const Header = () => {
           Jason Savelli
         </Name>
 
-        <Box alignItems="center" display={{ xs: "none", md: "flex" }} ml="auto">
-          <Tabs value={pathname} aria-label="nav tabs example" indicatorColor="secondary">
+        <Box display={{ xs: "none", md: "initial" }}>
+          <Tabs value={pathname} indicatorColor="secondary">
             {HEADER_LINKS.map((link) => {
               return (
                 <Tab
                   component={NavLink}
-                  icon={<link.icon />}
+                  icon={<link.icon sx={{ color: "custom.mediumEmphasis" }} />}
                   iconPosition="start"
                   key={link.href}
                   label={
-                    <Typography variant="body2" color="inherit">
+                    <Typography variant="body2" color="custom.mediumEmphasis">
                       {link.label}
                     </Typography>
                   }
@@ -62,6 +66,10 @@ export const Header = () => {
               );
             })}
           </Tabs>
+        </Box>
+
+        <Box display={{ xs: "none", md: "initial" }}>
+          <HeaderThemeModeButton />
         </Box>
       </AppBar>
 

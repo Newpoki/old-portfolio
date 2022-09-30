@@ -26,7 +26,10 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
 
         "&:hover": {
           boxShadow: theme.shadows[6],
-          bgcolor: lighten(theme.palette.primary.main, 0.9),
+          bgcolor:
+            theme.palette.mode === "dark"
+              ? theme.palette.custom.lowEmphasis
+              : lighten(theme.palette.primary.main, 0.9),
         },
       })}
     >
@@ -62,7 +65,7 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
             <Button
               startIcon={<GitHubIcon />}
               variant="outlined"
-              color="inherit"
+              color="secondary"
               href={githubUrl}
               target="_blank"
             >

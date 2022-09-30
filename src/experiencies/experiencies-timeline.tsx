@@ -41,7 +41,11 @@ export const ExperienciesTimeline = () => {
               <TimelineSeparator>
                 <TimelineConnector sx={{ backgroundColor: "custom.highEmphasis" }} />
                 <TimelineDot
-                  sx={{ backgroundColor: "primary.main", boxShadow: theme.shadows["12"] }}
+                  sx={{
+                    backgroundColor:
+                      theme.palette.mode === "dark" ? "custom.mediumEmphasis" : "primary.main",
+                    boxShadow: theme.shadows["12"],
+                  }}
                 >
                   <ExperienciesTimelineIcon type={experience.type} />
                 </TimelineDot>
@@ -58,7 +62,7 @@ export const ExperienciesTimeline = () => {
                   <Box
                     sx={{
                       p: 2,
-                      bgcolor: "common.white",
+                      bgcolor: "background.paper",
                       boxShadow: theme.shadows["6"],
                       borderRadius: theme.shape.borderRadius,
                       textAlign: "left",

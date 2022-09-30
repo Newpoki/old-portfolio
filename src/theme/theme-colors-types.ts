@@ -1,10 +1,10 @@
 export type ThemeCustomColors = {
-  highEmphasis: "#25282B";
-  mediumEmphasis: "#828282";
-  lowEmphasis: "#9A9FA8";
-  primary: "#FDC435";
-  background: "#F9FAFF";
-  white: "#FFFFFF";
+  highEmphasis: string;
+  mediumEmphasis: string;
+  lowEmphasis: string;
+  primary: string;
+  background: string;
+  white: string;
 };
 
 export type ThemeCustomFonts = {
