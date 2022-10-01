@@ -32,7 +32,7 @@ export const SOCIAL_NETWORK_BUTTONS = [
   },
   {
     Icon: PhoneIphoneIcon,
-    color: theme.palette.custom.highEmphasis,
+    color: theme.palette.primary.main,
     tooltipTitle: "Call me",
     href: "tel:+33659416819",
   },
