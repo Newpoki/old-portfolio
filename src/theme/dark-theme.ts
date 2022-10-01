@@ -165,6 +165,7 @@ export const darkTheme = createTheme(baseTheme, {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
+          transition: `${baseTheme.transitions.duration.short}ms background-color`,
           backgroundColor: customColors.background,
           position: "relative",
           margin: "0 auto",
