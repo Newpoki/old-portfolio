@@ -12,10 +12,12 @@ import { EXPERIENCES } from "./experiences-constants";
 import { ExperienciesTimelineIcon } from "./experiencies-timeline-icon";
 import { TransitionWrapper } from "@/theme/components/transition-wrapper";
 import { Markdown } from "@/theme/components/markdown";
+import { useTranslation } from "react-i18next";
 
 export const ExperienciesTimeline = () => {
   const theme = useTheme();
   const isLgOrUpper = useMediaQuery(theme.breakpoints.up("lg"));
+  const { t } = useTranslation("experiencies");
 
   return (
     <Timeline
@@ -74,7 +76,7 @@ export const ExperienciesTimeline = () => {
                     </Typography>
 
                     <Typography variant="body2">
-                      <Markdown>{experience.content}</Markdown>
+                      <Markdown>{t(experience.content)}</Markdown>
                     </Typography>
                   </Box>
                 </Slide>

@@ -8,12 +8,13 @@ import { NavLink } from "@/theme/components/navlink";
 import { APP_PX } from "@/app/app-constants";
 import { useAtom } from "jotai";
 import { settingsAtom } from "@/settings/settings-atom";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
   const [, setSettings] = useAtom(settingsAtom);
 
+  const { t } = useTranslation("header");
   const { pathname } = useLocation();
-
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleOpenDrawer = useCallback(() => {
@@ -64,7 +65,7 @@ export const Header = () => {
                   key={link.href}
                   label={
                     <Typography variant="body2" color="custom.mediumEmphasis">
-                      {link.label}
+                      {t(link.label)}
                     </Typography>
                   }
                   to={link.href}
@@ -81,7 +82,7 @@ export const Header = () => {
             startIcon={<SettingsIcon />}
             onClick={handleOpenSettings}
           >
-            Settings
+            {t("header:settings")}
           </Button>
         </Box>
       </AppBar>

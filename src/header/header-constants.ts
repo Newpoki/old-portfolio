@@ -6,8 +6,8 @@ import {
 } from "@mui/icons-material";
 
 export const HEADER_LINKS = [
-  { label: "Home", href: "/", icon: CottageIcon },
-  { label: "Projects", href: "/projects", icon: DesignServicesIcon },
-  { label: "Experiencies", href: "/experiencies", icon: WorkHistoryIcon },
-  { label: "About", href: "/about", icon: InfoIcon },
+  { label: "header:home", href: "/", icon: CottageIcon },
+  { label: "header:projects", href: "/projects", icon: DesignServicesIcon },
+  { label: "header:experiencies", href: "/experiencies", icon: WorkHistoryIcon },
+  { label: "header:about", href: "/about", icon: InfoIcon },
 ];

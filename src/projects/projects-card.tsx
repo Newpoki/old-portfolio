@@ -1,6 +1,7 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
 import { lighten, SystemStyleObject } from "@mui/system";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   title: string;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl, sx }: Props) => {
+  const { t } = useTranslation("projects");
+
   return (
     <Paper
       sx={(theme) => ({
@@ -44,11 +47,11 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
       >
         <Stack width={{ xs: "100%", lg: "50%" }} p={{ xs: 3, lg: 6 }}>
           <Typography variant="h3" mb={4}>
-            {title}
+            {t(title)}
           </Typography>
 
           <Typography variant="body2" mb={4}>
-            {description}
+            {t(description)}
           </Typography>
 
           <Box>
@@ -59,7 +62,7 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
               href={websiteUrl}
               target="_blank"
             >
-              View project
+              {t("projects:app-button")}
             </Button>
 
             <Button
@@ -69,7 +72,7 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
               href={githubUrl}
               target="_blank"
             >
-              View source
+              {t("projects:github-button")}
             </Button>
           </Box>
         </Stack>

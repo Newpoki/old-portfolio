@@ -14,9 +14,11 @@ import { DarkMode as DarkModeIcon, Flare as FlareIcon } from "@mui/icons-materia
 import { settingsAtom } from "@/settings/settings-atom";
 import { SettingsLanguageCode, SettingsThemeMode } from "@/settings/settings-types";
 import { LANGUAGES, LANGUAGE_LS_KEY, THEME_MODE_LS_KEY } from "@/settings/settings-constants";
+import { useTranslation } from "react-i18next";
 
 export const SettingsDialog = () => {
   const [{ isOpen, themeMode, language }, setSettings] = useAtom(settingsAtom);
+  const { t, i18n } = useTranslation("settings");
 
   const handleCloseSettings = useCallback(() => {
     setSettings((value) => ({ ...value, isOpen: false }));
@@ -24,6 +26,11 @@ export const SettingsDialog = () => {
 
   const handleChangeThemeMode = useCallback(
     (event: React.MouseEvent<HTMLElement>, newThemeMode: SettingsThemeMode) => {
+      // We don't want user to unselect current theme mode by clicking on the same that is already selected
+      if (newThemeMode === null) {
+        return;
+      }
+
       setSettings((value) => ({ ...value, themeMode: newThemeMode }));
 
       localStorage.setItem(THEME_MODE_LS_KEY, newThemeMode);
@@ -33,21 +40,28 @@ export const SettingsDialog = () => {
 
   const handleChangeLanguage = useCallback(
     (event: React.MouseEvent<HTMLElement>, newLanguageCode: SettingsLanguageCode) => {
+      // We don't want user to unselect current language by clicking on the same that is already selected
+      if (newLanguageCode === null) {
+        return;
+      }
+
       const newLanguage = LANGUAGES[newLanguageCode];
 
       setSettings((value) => ({ ...value, language: newLanguage }));
 
+      i18n.changeLanguage(newLanguage.code);
+
       localStorage.setItem(LANGUAGE_LS_KEY, newLanguage.code);
     },
-    [setSettings]
+    [i18n, setSettings]
   );
 
   return (
     <Dialog open={isOpen} onClose={handleCloseSettings} maxWidth="sm" fullWidth>
-      <DialogTitle variant="h4">Settings</DialogTitle>
+      <DialogTitle variant="h4">{t("settings:dialog.title")}</DialogTitle>
       <DialogContent dividers>
         <Typography variant="h6" mb={2}>
-          Theme mode
+          {t("settings:dialog.theme.title")}
         </Typography>
 
         <ToggleButtonGroup
@@ -59,17 +73,17 @@ export const SettingsDialog = () => {
         >
           <ToggleButton value="light">
             <FlareIcon sx={{ mr: 1 }} />
-            Light
+            {t("settings:dialog.theme.light")}
           </ToggleButton>
 
           <ToggleButton value="dark">
             <DarkModeIcon sx={{ mr: 1 }} />
-            Dark
+            {t("settings:dialog.theme.dark")}
           </ToggleButton>
         </ToggleButtonGroup>
 
         <Typography variant="h6" mb={2}>
-          Language
+          {t("settings:dialog.language.title")}
         </Typography>
 
         <ToggleButtonGroup
@@ -84,7 +98,7 @@ export const SettingsDialog = () => {
             sx={{ alignItems: "center", gap: 1, lineHeight: "16px" }}
           >
             <img src="https://countryflagsapi.com/svg/fr" alt="French flag" width={24} />
-            <span>French</span>
+            <span>{t("settings:dialog.language.french")}</span>
           </ToggleButton>
 
           <ToggleButton
@@ -92,13 +106,13 @@ export const SettingsDialog = () => {
             sx={{ alignItems: "center", gap: 1, lineHeight: "16px" }}
           >
             <img src="https://countryflagsapi.com/svg/gb" alt="British flag" width={24} />
-            <span>English</span>
+            <span>{t("settings:dialog.language.english")}</span>
           </ToggleButton>
         </ToggleButtonGroup>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleCloseSettings} variant="contained">
-          Close
+          <span>{t("settings:dialog.close")}</span>
         </Button>
       </DialogActions>
     </Dialog>

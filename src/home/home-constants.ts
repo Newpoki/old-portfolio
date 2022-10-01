@@ -13,34 +13,34 @@ export const SOCIAL_NETWORK_BUTTONS = [
     Icon: LinkedInIcon,
     // LinkedIn logo color
     color: "#0072b1",
-    tooltipTitle: "Go to LinkedIn",
+    tooltipTitle: "home:contacts.linkedIn",
     href: "https://www.linkedin.com/in/jason-savelli/",
   },
   {
     Icon: TwitterIcon,
     // Twitter logo color
     color: "#00acee",
-    tooltipTitle: "Go to Twitter",
+    tooltipTitle: "home:contacts.twitter",
     href: "https://twitter.com/home",
   },
   {
     Icon: GitHubIcon,
     // Github logo color
     color: "#171515",
-    tooltipTitle: "Go to Github",
+    tooltipTitle: "home:contacts.github",
     href: "https://github.com/Newpoki",
   },
   {
     Icon: PhoneIphoneIcon,
     color: theme.palette.primary.main,
-    tooltipTitle: "Call me",
+    tooltipTitle: "home:contacts.phone",
     href: "tel:+33659416819",
   },
   {
     Icon: EmailIcon,
     // Outlook logo color
     color: "#00a2ed",
-    tooltipTitle: "E-mail me",
+    tooltipTitle: "home:contacts.email",
     href: "mailto:savellijason@gmail.com",
   },
 ];

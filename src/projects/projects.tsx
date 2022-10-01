@@ -6,8 +6,11 @@ import { Helmet } from "react-helmet-async";
 import { ProjectsCard } from "./projects-card";
 import { PROJECTS_LIST } from "./projects-constants";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash.svg";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation("projects");
+
   return (
     <>
       <Helmet>
@@ -19,7 +22,7 @@ const Projects = () => {
       </YellowSplashWrapper>
 
       <Box maxWidth={1200} width="100%" mx="auto" position="relative" zIndex={2}>
-        <PageMainTitle>Projects</PageMainTitle>
+        <PageMainTitle>{t("projects:title")}</PageMainTitle>
 
         <Box component="ul" sx={{ listStyle: "none" }} pl={0}>
           {PROJECTS_LIST.map((project, index) => {

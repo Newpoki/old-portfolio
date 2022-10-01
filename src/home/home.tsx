@@ -5,10 +5,12 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { SOCIAL_NETWORK_BUTTONS } from "./home-constants";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash-with-photo.svg";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [yellowSplashHeight, setYellowSplashHeight] = useState(0);
+  const { t } = useTranslation("home");
 
   const handleUpdateYellowSplashHeight = useCallback(() => {
     if (ref.current) {
@@ -51,7 +53,7 @@ const Home = () => {
           <TransitionWrapper py={0.1}>
             <Slide in timeout={{ enter: 1600 }} direction="left">
               <JobTitle color="primary" mb={2}>
-                Web Developper
+                {t("home:job")}
               </JobTitle>
             </Slide>
           </TransitionWrapper>
@@ -59,16 +61,14 @@ const Home = () => {
           <TransitionWrapper>
             <Slide in timeout={{ enter: 1600 }} direction="right">
               <Typography mb={4} variant="h1">
-                Hello, my name is Jason Savelli
+                {t("home:title")}
               </Typography>
             </Slide>
           </TransitionWrapper>
 
           <TransitionWrapper>
             <Slide in timeout={{ enter: 1600 }} direction="left">
-              <Typography mb={4}>
-                I&apos;m a Front End developper, and I enjoy working on React and TS projects.
-              </Typography>
+              <Typography mb={4}>{t("home:description")}</Typography>
             </Slide>
           </TransitionWrapper>
         </Box>
@@ -81,7 +81,7 @@ const Home = () => {
       <Box flex="1" alignItems="center" justifyContent="center" display="flex" overflow="hidden">
         {SOCIAL_NETWORK_BUTTONS.map((socialNetwork, index) => {
           return (
-            <Tooltip title={socialNetwork.tooltipTitle} key={socialNetwork.href}>
+            <Tooltip title={t(socialNetwork.tooltipTitle)} key={socialNetwork.href}>
               <Slide in timeout={{ enter: (index + 1) * 300 }} direction="up">
                 <IconButton
                   sx={{ mx: { xs: 0.5, md: 2 }, color: socialNetwork.color }}

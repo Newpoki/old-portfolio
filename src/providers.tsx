@@ -4,9 +4,11 @@ import { ReactNode, useEffect, useMemo } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 import { settingsAtom } from "./settings/settings-atom";
-import { LANGUAGES, LANGUAGE_LS_KEY, THEME_MODE_LS_KEY } from "./settings/settings-constants";
+import { LANGUAGES, THEME_MODE_LS_KEY } from "./settings/settings-constants";
 import { darkTheme } from "./theme/dark-theme";
 import { theme } from "./theme/theme";
+import { useTranslation } from "react-i18next";
+import { SettingsLanguageCode } from "./settings/settings-types";
 
 type Props = {
   children: ReactNode;
@@ -14,6 +16,7 @@ type Props = {
 
 export const Providers = ({ children }: Props) => {
   const [{ themeMode, language }, setSettings] = useAtom(settingsAtom);
+  const { i18n } = useTranslation();
 
   const usedTheme = useMemo(() => {
     return themeMode === "dark" ? darkTheme : theme;
@@ -38,23 +41,11 @@ export const Providers = ({ children }: Props) => {
 
   useEffect(() => {
     if (language === null) {
-      const languageCodeFromLS = localStorage.getItem(LANGUAGE_LS_KEY);
+      const languageCodeFromI18n = i18n.language as SettingsLanguageCode;
 
-      if (languageCodeFromLS === LANGUAGES.fr.code || languageCodeFromLS === LANGUAGES.en.code) {
-        const languageFromLS = LANGUAGES[languageCodeFromLS];
-
-        setSettings((value) => ({ ...value, language: languageFromLS }));
-
-        return;
-      }
-
-      if (/^fr\b/.test(navigator.language)) {
-        setSettings((value) => ({ ...value, language: LANGUAGES.fr }));
-      }
-
-      setSettings((value) => ({ ...value, language: LANGUAGES.en }));
+      setSettings((value) => ({ ...value, language: LANGUAGES[languageCodeFromI18n] }));
     }
-  }, [language, setSettings]);
+  }, [i18n.language, language, setSettings]);
 
   return (
     <HelmetProvider>

@@ -1,5 +1,5 @@
 import { PageMainTitle } from "@/theme/components/page-main-title";
-import { Box, Button, Link, Slide, styled, Typography, Zoom } from "@mui/material";
+import { Box, Button, Slide, styled, Typography, Zoom } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import Me from "./me.jpg";
 import { OpenInNew as OpenInNewIcon } from "@mui/icons-material";
@@ -9,8 +9,11 @@ import { AboutRightPart } from "./about-right-part";
 import { useRef } from "react";
 import { ReactComponent as YellowSplash } from "@/theme/assets/yellow-splash.svg";
 import { YellowSplashWrapper } from "@/theme/components/yellow-splash-wrapper";
+import { useTranslation } from "react-i18next";
+import { Markdown } from "@/theme/components/markdown";
 
 const About = () => {
+  const { t } = useTranslation("about");
   const meParagraphRoot = useRef<HTMLDivElement>(null);
   const thisWebsiteParagraphRoot = useRef<HTMLDivElement>(null);
 
@@ -26,7 +29,7 @@ const About = () => {
 
       {/* We want the whole continue to be display above the yellow splash */}
       <Box zIndex={2} position="relative">
-        <PageMainTitle>About</PageMainTitle>
+        <PageMainTitle>{t("about:title")}</PageMainTitle>
 
         <Box
           alignItems="center"
@@ -43,25 +46,17 @@ const About = () => {
               timeout={{ enter: 1200 }}
             >
               <Typography variant="h3" mb={3}>
-                Me
+                {t("about:me.title")}
               </Typography>
             </Slide>
 
             <AboutParagraph timeout={{ enter: 1400 }}>
-              I&apos;m Jason Savelli (He / Him). I was born on the 24th of December 1996, in
-              Marignane, France. 25 years old, living in Décines Charpieu, near Lyon, France.
+              {t("about:me.age-and-localization")}
             </AboutParagraph>
 
-            <AboutParagraph timeout={{ enter: 1600 }}>
-              I was an O&apos;Clock student in 2019, where I deepened my love for the web ecosystem.
-              Early in my journey in the web ecosystem, I&apos;ve found that I really love
-              Javascript so I&apos;m giving 200% of myself in to get better and better everyday.
-            </AboutParagraph>
+            <AboutParagraph timeout={{ enter: 1600 }}>{t("about:me.studies")}</AboutParagraph>
 
-            <AboutParagraph timeout={{ enter: 1800 }}>
-              I have 2 beautifull doggos that I love more than anything, playing guitar, video
-              games.
-            </AboutParagraph>
+            <AboutParagraph timeout={{ enter: 1800 }}>{t("about:me.other")}</AboutParagraph>
           </AboutLeftPart>
 
           <Zoom in timeout={{ enter: 800 }}>
@@ -91,44 +86,20 @@ const About = () => {
               timeout={{ enter: 1200 }}
             >
               <Typography variant="h3" mb={3}>
-                This website
+                {t("about:website.title")}
               </Typography>
             </Slide>
 
             <AboutParagraph timeout={{ enter: 1400 }}>
-              <Typography component="span" variant="body2">
-                The design is <b>strongly</b> inspired by this&nbsp;
-              </Typography>
-              <Link href="https://www.figma.com/community/file/946944225031473055">Figma</Link> on
-              the community place. It&apos;s made with a<i>little bit</i> overkilled stack,
-              using&nbsp;
-              <Link href="https://fr.reactjs.org/" target="_blank">
-                React
-              </Link>
-              ,&nbsp;
-              <Link href="https://mui.com" target="_blank">
-                Material UI
-              </Link>
-              &nbsp;with&nbsp;
-              <Link href="https://www.typescriptlang.org/" target="_blank">
-                Typescript
-              </Link>
-              &nbsp;and&nbsp;
-              <Link href="https://vitejs.dev/" target="_blank">
-                Vite
-              </Link>
-              .
+              <Markdown>{t("about:website.inspiration-and-stack")}</Markdown>
             </AboutParagraph>
 
             <AboutParagraph timeout={{ enter: 1600 }}>
-              The picture on the home page has been taken by <b>Andrey Vyrodov</b>, and you can have
-              a look at his&nbsp;
-              <Link href="https://www.instagram.com/runningwithcameraphoto/">Instagram</Link>.
+              <Markdown>{t("about:website.picture")}</Markdown>
             </AboutParagraph>
 
             <AboutParagraph timeout={{ enter: 1600 }}>
-              This is not supposed to be the best website in the world, only a little portfolio
-              where I can share what I&apos;ve done, and some infos about me.
+              {t("about:website.disclaimer")}
             </AboutParagraph>
           </AboutLeftPart>
 
@@ -141,7 +112,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Hey, lead me to the GitHub
+              {t("about:website.github-button")}
             </Button>
           </AboutRightPart>
         </Box>
