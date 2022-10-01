@@ -48,7 +48,7 @@ const Home = () => {
           // So that it goes on top of the yellow splash
           zIndex={2}
         >
-          <TransitionWrapper>
+          <TransitionWrapper py={0.1}>
             <Slide in timeout={{ enter: 1600 }} direction="left">
               <JobTitle color="primary" mb={2}>
                 Web Developper
@@ -106,7 +106,7 @@ const JobTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.custom.confortaa,
   fontSize: 20,
   textTransform: "uppercase",
-  lineHeight: "27px",
+  lineHeight: "28px",
   fontWeight: 700,
 }));
 
