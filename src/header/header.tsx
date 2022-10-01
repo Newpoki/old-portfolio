@@ -1,14 +1,17 @@
-import { AppBar, Box, IconButton, styled, Tab, Tabs, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, styled, Tab, Tabs, Typography } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { HEADER_LINKS } from "./header-constants";
-import { Menu as MenuIcon } from "@mui/icons-material";
+import { Menu as MenuIcon, Settings as SettingsIcon } from "@mui/icons-material";
 import { useCallback, useState } from "react";
 import { HeaderDrawer } from "./header-drawer";
 import { NavLink } from "@/theme/components/navlink";
 import { APP_PX } from "@/app/app-constants";
-import { HeaderThemeModeButton } from "./header-theme-mode-button";
+import { useAtom } from "jotai";
+import { settingsAtom } from "@/settings/settings-atom";
 
 export const Header = () => {
+  const [, setSettings] = useAtom(settingsAtom);
+
   const { pathname } = useLocation();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -20,6 +23,10 @@ export const Header = () => {
   const handleCloseDrawer = useCallback(() => {
     setIsDrawerOpen(false);
   }, []);
+
+  const handleOpenSettings = useCallback(() => {
+    setSettings((value) => ({ ...value, isOpen: true }));
+  }, [setSettings]);
 
   return (
     <>
@@ -69,7 +76,13 @@ export const Header = () => {
         </Box>
 
         <Box display={{ xs: "none", md: "initial" }}>
-          <HeaderThemeModeButton />
+          <Button
+            sx={{ color: "custom.mediumEmphasis" }}
+            startIcon={<SettingsIcon />}
+            onClick={handleOpenSettings}
+          >
+            Settings
+          </Button>
         </Box>
       </AppBar>
 

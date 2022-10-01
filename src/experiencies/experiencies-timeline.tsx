@@ -53,7 +53,7 @@ export const ExperienciesTimeline = () => {
               </TimelineSeparator>
             </Grow>
 
-            <TimelineContent>
+            <TimelineContent pr={{ xs: 0, md: 2 }}>
               <TransitionWrapper
                 // Adding padding otherwise the internal overflow hidden hides the box shadow
                 p={1}
