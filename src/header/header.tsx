@@ -78,6 +78,7 @@ export const Header = () => {
 
         <Box display={{ xs: "none", md: "initial" }}>
           <Button
+            size="large"
             sx={{ color: "custom.mediumEmphasis" }}
             startIcon={<SettingsIcon />}
             onClick={handleOpenSettings}
