@@ -46,7 +46,12 @@ export const Header = () => {
           px: APP_PX,
         })}
       >
-        <IconButton color="primary" sx={{ display: { md: "none" } }} onClick={handleOpenDrawer}>
+        <IconButton
+          aria-label={t("header:icon.aria-label")}
+          color="primary"
+          sx={{ display: { md: "none" } }}
+          onClick={handleOpenDrawer}
+        >
           <MenuIcon sx={{ color: "custom.highEmphasis" }} />
         </IconButton>
 
