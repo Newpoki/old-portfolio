@@ -13,6 +13,12 @@ export const ENGLISH_SETTINGS = {
         english: "English",
       },
       close: "Close",
+      flag: {
+        alt: {
+          fr: "French flag",
+          en: "English flag",
+        },
+      },
     },
   },
 };

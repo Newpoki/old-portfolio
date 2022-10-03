@@ -6,9 +6,11 @@ export const ENGLISH_ABOUT = {
       ["age-and-localization"]:
         "I'm Jason Savelli (He / Him). I was born on the 24th of December 1996, in Marignane, France. 25 years old, living in Décines Charpieu, near Lyon, France.",
       studies:
-        "I was an O'Clock student in 2019, where I deepened my love for the web ecosystem. Early in my journey in the web ecosystem, I've found that I really love Javascript so I'm giving 200% of myself in to get better and better everyday.",
+        "I was an [O'Clock](https://oclock.io/) student in 2019, where I deepened my love for the web ecosystem. Early in my journey in the web ecosystem, I've found that I really love Javascript so I'm giving 200% of myself in to get better and better everyday.",
       other:
         "I have 2 beautifull doggos that I love more than anything, playing guitar, video games",
+      imgAlt:
+        "Me, a young man holding by little dog in my arms looking at each others as lovely as we can",
     },
     website: {
       title: "This website",

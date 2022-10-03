@@ -8,6 +8,7 @@ export const PROJECTS_LIST = [
     websiteUrl: "https://pokedex-newpoki.vercel.app/",
     githubUrl: "https://github.com/Newpoki/pokedex",
     imgUrl: PokedexImg,
+    imgAlt: "projects:pokedex.imgAlt",
   },
   {
     title: "projects:consumption-calculator.title",
@@ -15,5 +16,6 @@ export const PROJECTS_LIST = [
     websiteUrl: "https://brave-snyder-8bb959.netlify.app/",
     githubUrl: "https://github.com/Newpoki/calcul-conso",
     imgUrl: ConsumptionCalculatorImg,
+    imgAlt: "projects:consumption-calculator.imgAlt",
   },
 ];

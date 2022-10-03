@@ -13,6 +13,12 @@ export const FRENCH_SETTINGS = {
         english: "Anglais",
       },
       close: "Fermer",
+      flag: {
+        alt: {
+          fr: "Drapeau français",
+          en: "Drapeau anglais",
+        },
+      },
     },
   },
 };

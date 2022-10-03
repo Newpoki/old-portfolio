@@ -97,7 +97,12 @@ export const SettingsDialog = () => {
             value={LANGUAGES.fr.code}
             sx={{ alignItems: "center", gap: 1, lineHeight: "16px" }}
           >
-            <img src="https://countryflagsapi.com/svg/fr" alt="French flag" width={24} />
+            <img
+              src="https://countryflagsapi.com/svg/fr"
+              alt={t("settings:dialog.flag.alt.fr")}
+              width={24}
+              loading="lazy"
+            />
             <span>{t("settings:dialog.language.french")}</span>
           </ToggleButton>
 
@@ -105,7 +110,12 @@ export const SettingsDialog = () => {
             value={LANGUAGES.en.code}
             sx={{ alignItems: "center", gap: 1, lineHeight: "16px" }}
           >
-            <img src="https://countryflagsapi.com/svg/gb" alt="British flag" width={24} />
+            <img
+              src="https://countryflagsapi.com/svg/gb"
+              alt={t("settings:dialog.flag.alt.en")}
+              width={24}
+              loading="lazy"
+            />
             <span>{t("settings:dialog.language.english")}</span>
           </ToggleButton>
         </ToggleButtonGroup>

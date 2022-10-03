@@ -54,7 +54,9 @@ const About = () => {
               {t("about:me.age-and-localization")}
             </AboutParagraph>
 
-            <AboutParagraph timeout={{ enter: 1600 }}>{t("about:me.studies")}</AboutParagraph>
+            <AboutParagraph timeout={{ enter: 1600 }}>
+              <Markdown>{t("about:me.studies")}</Markdown>
+            </AboutParagraph>
 
             <AboutParagraph timeout={{ enter: 1800 }}>{t("about:me.other")}</AboutParagraph>
           </AboutLeftPart>
@@ -65,7 +67,7 @@ const About = () => {
                 // So that the div doesnt take more height than the img it contains
                 display="flex"
               >
-                <img src={Me} width="100%" />
+                <img src={Me} width="100%" alt={t("about:me.imgAlt")} />
               </Box>
             </AboutRightPart>
           </Zoom>

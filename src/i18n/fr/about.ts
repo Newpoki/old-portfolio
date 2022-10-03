@@ -9,6 +9,8 @@ export const FRENCH_ABOUT = {
         "J'ai été étudiant chez [O'Clock](https://oclock.io/) en 2019 où j'ai appronfondi mon amour pour l'écosysteme web. Très tôt, je me suis découvert une vrai passion pour le Javascript donc je donne 200% de moi même pour devenir meilleur chaque jours.",
       other:
         "J'ai 2 magnifiques chiens que j'aime plus que tout, j'aime jouer de la guitare, et aux jeux videos.",
+      imgAlt:
+        "Moi, un jeune homme tenant mon chien dans mes bras nous regardant avec tout l'amour du monde dans les yeux",
     },
     website: {
       title: "Ce site",

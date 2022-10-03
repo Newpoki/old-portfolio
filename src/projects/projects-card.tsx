@@ -9,10 +9,19 @@ type Props = {
   imgUrl: string;
   websiteUrl: string;
   githubUrl: string;
+  imgAlt: string;
   sx: SystemStyleObject;
 };
 
-export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl, sx }: Props) => {
+export const ProjectsCard = ({
+  title,
+  description,
+  websiteUrl,
+  githubUrl,
+  imgAlt,
+  imgUrl,
+  sx,
+}: Props) => {
   const { t } = useTranslation("projects");
 
   return (
@@ -78,7 +87,12 @@ export const ProjectsCard = ({ title, description, websiteUrl, githubUrl, imgUrl
         </Stack>
 
         <Stack width={{ xs: "100%", lg: "50%" }} height="100%">
-          <img src={imgUrl} style={{ objectFit: "cover", height: "100%" }} loading="lazy" />
+          <img
+            src={imgUrl}
+            style={{ objectFit: "cover", height: "100%" }}
+            loading="lazy"
+            alt={t(imgAlt)}
+          />
         </Stack>
       </Box>
     </Paper>
