@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Projects - Jason Savelli</title>
+        <title>{t("projects:title")} - Jason Savelli</title>
       </Helmet>
 
       <YellowSplashWrapper>

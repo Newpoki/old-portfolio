@@ -1,6 +1,6 @@
 export const FRENCH_EXPERIENCIES = {
   experiencies: {
-    title: "Expériencies",
+    title: "Expériences",
     mediakeys:
       'En **CDI** chez [Mediakeys](https://www.mediakeys.com/) en tant que développeur web Front-End.\n\nJe travaille sur divers projets, les deux principaux étant une plateforme permettant aux entreprises / media trader de gérer leurs campagnes publicitaires, de partout dans le monde, sur divers media tel que Facebook, Instagram, divers sites internets, etc, et une application permettant de créer des banières publicitaires pour ces mêmes media.\nPour mener à bien la création de nouvelles applis et l\'évolution de ceux déjà existant, je fais:\n\n- Création de maquette dites "wire-frame"\n- Création de nouveaux composants et container\n- Rédaction de tests unitaires\n- Proposition de nouvelles fonctionalités\n- Rédaction de documentation\n- Cérémonies Agile\n\n**Librairies utilisées:** React, Redux, Redux Sagas, Moment, Moment JS, Material-UI, Jest, etc ...',
     hcube:

@@ -1,7 +1,8 @@
 export const FRENCH_HOME = {
   home: {
+    title: "Accueil",
     job: "Développeur Web",
-    title: "Salut, je m'appelle Jason Savelli",
+    main: "Salut, je m'appelle Jason Savelli",
     description:
       "Je suis développeur Front End, et j'adore travailler sur des projets avec React et TS.",
     contacts: {

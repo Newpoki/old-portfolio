@@ -20,7 +20,7 @@ const About = () => {
   return (
     <Box maxWidth={1200} mx="auto">
       <Helmet>
-        <title>About - Jason Savelli</title>
+        <title>{t("about:title")} - Jason Savelli</title>
       </Helmet>
 
       <YellowSplashWrapper>

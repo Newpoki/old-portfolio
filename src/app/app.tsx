@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { APP_PX } from "./app-constants";
 import { Header } from "../header/header";
-import { SettingsDialog } from "@/header/settings-dialog";
+import { SettingsDialog } from "@/settings/settings-dialog";
 
 const Home = lazy(() => import("../home/home"));
 const Projects = lazy(() => import("../projects/projects"));

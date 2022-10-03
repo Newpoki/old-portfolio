@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home - Jason Savelli</title>
+        <title>{t("home:title")} - Jason Savelli</title>
       </Helmet>
 
       <Box display="flex" flexDirection={{ xs: "column-reverse" }}>
@@ -61,7 +61,7 @@ const Home = () => {
           <TransitionWrapper>
             <Slide in timeout={{ enter: 1600 }} direction="right">
               <Typography mb={4} variant="h1">
-                {t("home:title")}
+                {t("home:main")}
               </Typography>
             </Slide>
           </TransitionWrapper>
