@@ -63,11 +63,25 @@ export const ProjectsCard = ({
             {t(description)}
           </Typography>
 
-          <Box>
+          <Box
+            display="flex"
+            flexDirection={{
+              xs: "column",
+              sm: "row",
+            }}
+          >
             <Button
               variant="contained"
               color="primary"
-              sx={{ mr: 2 }}
+              sx={{
+                mr: {
+                  sm: 2,
+                },
+                mb: {
+                  xs: 2,
+                  sm: 0,
+                },
+              }}
               href={websiteUrl}
               target="_blank"
             >
