@@ -1,6 +1,8 @@
 export const FRENCH_EXPERIENCIES = {
   experiencies: {
     title: "Expériences",
+    mention:
+      "En **CDI** chez [Mention](https://mention.com/en/) en tant que Développeur Front End.\n\nJe fais parti de la squad **Publish**, la feature de **social media management**, qui permet aux utilisateurs une gestion amélioré de leur réseau sociaux. Pour continuer de faire grandir Mention, j'ai pour tache de:\n\n- Intégration de vue complexe à partir de design Figma\n- Conversion de code legacy vers du code plus actuel\n- Proposition de nouvelles fonctionalités / comportements\n- Rédaction de documentation\n- Meeting front où on partage nos meilleurs pratiques\n- Un peu de mentoring avec les plus juniors\n\n\n**Librairies utilisées :** React, Redux, Relay, Moment, Jest, Material ui, Styled-components, Flow, Typescript, etc...",
     mediakeys:
       'En **CDI** chez [Mediakeys](https://www.mediakeys.com/) en tant que développeur web Front-End.\n\nJe travaille sur divers projets, les deux principaux étant une plateforme permettant aux entreprises / media trader de gérer leurs campagnes publicitaires, de partout dans le monde, sur divers media tel que Facebook, Instagram, divers sites internets, etc, et une application permettant de créer des banières publicitaires pour ces mêmes media.\nPour mener à bien la création de nouvelles applis et l\'évolution de ceux déjà existant, je fais:\n\n- Création de maquette dites "wire-frame"\n- Création de nouveaux composants et container\n- Rédaction de tests unitaires\n- Proposition de nouvelles fonctionalités\n- Rédaction de documentation\n- Cérémonies Agile\n\n**Librairies utilisées:** React, Redux, Redux Sagas, Moment, Moment JS, Material-UI, Jest, etc ...',
     hcube:

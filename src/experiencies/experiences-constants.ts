@@ -4,10 +4,21 @@ export const EXPERIENCES: Array<Experience> = [
   {
     type: "work",
     place: {
+      city: "Paris",
+      country: "FR",
+    },
+    startedAt: "2022-02-21",
+    content: "experiencies:mention",
+    title: "✪ Mention ✪",
+  },
+  {
+    type: "work",
+    place: {
       city: "Lattes",
       country: "FR",
     },
     startedAt: "2020-10-15",
+    endedAt: "2022-02-12",
     content: "experiencies:mediakeys",
     title: "Mediakeys",
   },

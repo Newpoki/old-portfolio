@@ -1,6 +1,8 @@
 export const ENGLISH_EXPERIENCIES = {
   experiencies: {
     title: "Experiencies",
+    mention:
+      "In an **open-ended contract** at [Mention](https://mention.com/en/) as Front-End web developer.\nI'm part of the **Publish** squad, the **social media mangement** feature, that allows users an improved social media management. To maintain Mention growth, common tasks are:\n\n- Integrating complex design from Figma\n- Convert legacy code to a more modern approach\n- Suggest new features / behaviors\n- Take part in front meeting to share best practices\n- A little bit of mentoring with the most junior developper\n\n\n**Used libraries :** React, Redux, Relay, Moment, Jest, Material ui, Styled-components, Flow, Typescript, etc...",
     mediakeys:
       "In an **open-ended contract** at [Mediakeys](https://www.mediakeys.com/) as Front-End web developer.\nI'm working on few projects, the two mains being a platform allowing companies / media trader to handle their advertising campaigns around the worl on various media as Facebook, Instagram, website, native applications, Youtube, etc, and an app to create AD usable for these AD campaigns.\nIn order to create new applications and continue the existings, I have to:\n\n- Create wireframes mockups\n- Create components and ducks\n- Writing a lot of unit tests\n- Advise new functionality nor evolution\n- Write documentation\n- Take part to SCRUM ceremonies\n\n**Used libraries :** React, Redux, Redux Sagas, Moment, Moment JS, Material-UI, Jest, etc ...\n",
     hcube:
