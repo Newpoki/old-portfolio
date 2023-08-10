@@ -8,7 +8,7 @@ This repositery host my personal website code. The site itself show my CV, custo
 
 ## **Project setup**
 
-- `git@github.com:Newpoki/final-portfolio.git`
+- `git@github.com:Newpoki/old-portfolio.git`
 - `npm i && npm run start` or `yarn && yarn start`
 
 ## **Stack technique**
